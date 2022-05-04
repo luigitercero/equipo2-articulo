@@ -10,32 +10,46 @@
 \ead{jacky.mucklow@iop.org}
 
 \begin{abstract}
-{it must contain an abstract. This document describes the  preparation of a conference paper to be published in \jpcs\ using \LaTeXe\ and the \cls\ class file. The abstract text should be formatted using 10 point font and indented 25 mm from the left margin. Leave 10 mm space after the abstract before you begin the main text of your article. The text of your article should start on the same page as the abstract. The abstract follows the addresses and should give readers concise information about the content of the article and indicate the main results obtained and conclusions drawn. As the abstract is not part of the text it should be complete in itself; no table numbers, figure numbers, references or displayed mathematical expressions should be included. It should be suitable for direct inclusion in abstracting services and should not normally exceed 200 words. The abstract should generally be restricted to a single paragraph. Since contemporary information-retrieval systems rely heavily on the content of titles and abstracts to identify relevant articles in literature searches, great care should be taken in constructing both.
+La presente propuesta se basa en el desarrollo y despliegue de un sistema capaz de obtener los mejores candidatos para las empresas hondureñas con vacantes disponibles para coberturas de plazas nuevas o existentes, se busca la extracción y comparación de características de las habilidades técnicas o duras que mejor se asocian a la puestos junto con las capacidad buscadas que se asocien mejor a la empresa.  De igual manera se busca obtener características que corresponden a las posiciones jerárquicas en las cuales cada candidato se ha desempeñado.
+
+Como idea general se trata de descubrir una similitud de carácter semántico entre las relaciones de las habilidades que presentan los curriculums de los candidatos contra las necesitadas por la empresa, esto con el uso de técnicas de aprendizaje automático enfocadas en el procesamiento del lenguaje natural.
 \end{abstract}
 
-\section{Introduction}
-These guidelines show how to prepare articles for publication in \jpcs\ using \LaTeX\ so they can be published quickly and accurately. Articles will be refereed by the \corg s but the accepted PDF will be published with no editing, proofreading or changes to layout. It is, therefore, the author's responsibility to ensure that the content and layout are correct.  This document has been prepared using \cls\ so serves as a sample document. The class file and accompanying documentation are available from \verb"http://jpcs.iop.org".
+\section{Introducción}
+Tomando a la Inteligencia Artificial (IA) como esa capacidad que dota a las máquinas o sistemas para simular el razonamiento similar al de un ser humano, encontramos que detrás de ella existen diferentes procesos que permiten el manejo de gran volúmenes de datos y partiendo de estos poder tener un aprendizaje que permita automatizar los procesos a medida que se obtiene más y más información.
 
-\section{Preparing your paper}
-\verb"jpconf" requires \LaTeXe\ and  can be used with other package files such
-as those loading the AMS extension fonts 
-\verb"msam" and \verb"msbm" (these fonts provide the 
-blackboard bold alphabet and various extra maths symbols as well as 
-symbols useful in figure captions); an extra style file \verb"iopams.sty" is 
-provided to load these packages and provide extra definitions for bold Greek letters. 
-\subsection{Headers, footers and page numbers}
-Authors should {\it not} add headers, footers or page numbers to the pages of their article---they will
-be added by \iopp\ as part of the production process.
+En caso particular, la Inteligencia Artificial brinda un potencial muy elevado a la Gestión del Talento Humano o área de Recursos Humanos (RRHH), como comúnmente se conoce. Littler una empresa enfocada en estudios de RRHH, menciona que el 25\% de las empresas encuestadas utilizan herramientas tecnológicas para la detección de solicitantes. Según estudios realizados por la empresa estadounidense Gartner, el 23\% de las organizaciones está en un proceso de pruebas o de implementación de tecnologías con uso de IA en sus departamentos de RRHH. Y hace énfasis en tres procesos de uso más común: la identificación del talento, escucha a los empleados y asistencia virtual dentro de los procesos de reclutamiento (Littler, 2021).
 
-\subsection{{\cls\ }package options}
-The \cls\ class file has two options `a4paper' and `letterpaper':
-\begin{verbatim}
-\documentclass[a4paper]{jpconf}
-\end{verbatim}
+El estado del arte actual del problema indica que hay muchos planteamientos que pueden solucionar en mayor medida la situación siendo en su mayoría la aplicabilidad a corpus de idiomas ingles en su mayoría, dentro de los cuales se puede mencionar:
 
-or \begin{verbatim}
-\documentclass[letterpaper]{jpconf}
-\end{verbatim}
+\begin{itemize}
+    \item Extracción de habilidades implícitas mediante documento Incrustación y su uso en la recomendación de trabajo. 0.88 de precisión obtenida.
+    \item Extracción de Habilidades Laborales con LSTM y Word Embeddings. 0.76 de precisión.
+	\item Un enfoque de aprendizaje automático para la automatización del currículum Sistema de recomendación. 0.7853 de precisión.
+\end{itemize}
+
+El desarrollo y despliegue del sistema en cuestión como solución mejorar la relación entre las especificaciones requeridas por las empresas por medio de la extracción de características de los curriculums vitae (CV), con la utilización de técnicas de procesamiento de lenguaje natural por medio del análisis semántico de palabras y su vecindad, así como un algoritmo de coincidencias que permita la relación entre las capacidades que la empresa necesita junto con la posición jerárquica dentro de la misma.
+
+
+\section{Estado del Arte}
+La Inteligencia Artificial brinda un potencial muy elevado a la Gestión del Talento Humano o área de Recursos Humanos (RRHH), como comúnmente se conoce. Littler una empresa enfocada en estudios de RRHH, menciona que el 25\% de las empresas encuestadas utilizan herramientas tecnológicas para la detección de solicitantes. Según estudios realizados por la empresa estadounidense Gartner, el 23\% de las organizaciones está en un proceso de pruebas o de implementación de tecnologías con uso de IA en sus departamentos de RRHH. Y hace énfasis en tres procesos de uso más común: la identificación del talento, escucha a los empleados y asistencia virtual dentro de los procesos de reclutamiento (Littler, 2021).
+
+El diseño que se plantea puede generar mejoras sustanciales en las empresas a través del aumento de la productividad realizando la sustitución de las tareas rutinarias y delegándoselas a los sistemas inteligentes para aumentar la eficiencia (Institute, 2020). En este caso con el uso de una plataforma para la digitalización, análisis y clasificación de candidatos para una vacante en específico, con el uso de herramientas de IA. El problema se centra en que durante el proceso de selección y según investigaciones en el tema, indican que un reclutador promedio pasa entre 6-8 segundos revisando un curriculum vitae (CV) de un candidato y decide si es adecuado o no. A mayor número de CV menor es el tiempo empleado en la lectura y análisis del candidato (G., 2015). Sin embargo si un CV llama la atención el tiempo aumenta entre 1-15 minutos para su lectura detallada.
+
+Técnicamente el diseño plantea la posibilidad de mejorar la relación entre las especificaciones requeridas por las empresas por medio de la extracción de características de los curriculums vitae (CV), con la utilización de técnicas de procesamiento de lenguaje natural por medio del análisis semántico de palabras y su vecindad, así como un algoritmo de coincidencias que permita la relación entre las capacidades que la empresa necesita junto con la posición jerárquica dentro de la misma. 
+
+%\subsection{{\cls\ }package options}
+%The \cls\ class file has two options `a4paper' and `letterpaper':
+%\begin{verbatim}
+%\documentclass[a4paper]{jpconf}
+%\end{verbatim}
+
+%or \begin{verbatim}
+%\documentclass[letterpaper]{jpconf}
+%\end{verbatim}
+
+
+
 
 \begin{center}
 \begin{table}[h]
