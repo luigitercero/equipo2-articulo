@@ -1,13 +1,13 @@
 \documentclass[a4paper]{jpconf}
 \usepackage{graphicx}
 \begin{document}
-\title{Preparing a paper using \LaTeXe\ for publication in \jpcs}
+\title{Propuesta para la elección de candidatos a trabajos}
 
-\author{Jacky Mucklow}
-
-\address{Production Editor, \jpcs, \iopp, Dirac House, Temple Back, Bristol BS1~6BE, UK}
-
-\ead{jacky.mucklow@iop.org}
+\author{
+Jossel Ramón Osorto Rodríguez, 
+Luis Estuardo Azurdia Cárcamo, 
+Román Domínguez Galván
+}
 
 \begin{abstract}
 La presente propuesta se basa en el desarrollo y despliegue de un sistema capaz de obtener los mejores candidatos para las empresas hondureñas con vacantes disponibles para coberturas de plazas nuevas o existentes, se busca la extracción y comparación de características de las habilidades técnicas o duras que mejor se asocian a la puestos junto con las capacidad buscadas que se asocien mejor a la empresa.  De igual manera se busca obtener características que corresponden a las posiciones jerárquicas en las cuales cada candidato se ha desempeñado.
@@ -16,7 +16,7 @@ Como idea general se trata de descubrir una similitud de carácter semántico en
 \end{abstract}
 
 \section{Introducción}
-Tomando a la Inteligencia Artificial (IA) como esa capacidad que dota a las máquinas o sistemas para simular el razonamiento similar al de un ser humano, encontramos que detrás de ella existen diferentes procesos que permiten el manejo de gran volúmenes de datos y partiendo de estos poder tener un aprendizaje que permita automatizar los procesos a medida que se obtiene más y más información.
+Tomando a la Inteligencia Artificial (IA) como esa capacidad que dota a las máquinas o sistemas para simular el razonamiento similar al de un ser humano, encontramos que detrás de ella existen diferentes procesos que permiten el manejo de grandes volúmenes de datos y partiendo de estos poder tener un aprendizaje que permita automatizar los procesos a medida que se obtiene más y más información.
 
 En caso particular, la Inteligencia Artificial brinda un potencial muy elevado a la Gestión del Talento Humano o área de Recursos Humanos (RRHH), como comúnmente se conoce. Littler una empresa enfocada en estudios de RRHH, menciona que el 25\% de las empresas encuestadas utilizan herramientas tecnológicas para la detección de solicitantes. Según estudios realizados por la empresa estadounidense Gartner, el 23\% de las organizaciones está en un proceso de pruebas o de implementación de tecnologías con uso de IA en sus departamentos de RRHH. Y hace énfasis en tres procesos de uso más común: la identificación del talento, escucha a los empleados y asistencia virtual dentro de los procesos de reclutamiento (Littler, 2021).
 
@@ -70,91 +70,51 @@ Option&Description\\
 The default paper size is A4 (i.e., the default option is {\tt a4paper}) but this can be changed to Letter by 
 using \verb"\documentclass[letterpaper]{jpconf}". It is essential that you do not put macros into the text which alter the page dimensions.
 
-\section{The title, authors, addresses and abstract} 
-The code for setting the title page information is slightly different from
-the normal default in \LaTeX\ but please follow these instructions as carefully as possible so all articles within a conference have the same style to the title page. 
-The title is set in bold unjustified type using the command
-\verb"\title{#1}", where \verb"#1" is the title of the article. The
-first letter of the title should be capitalized with the rest in lower case. 
-The next information required is the list of all authors' names followed by 
-the affiliations. For the authors' names type \verb"\author{#1}", 
-where \verb"#1" is the 
-list of all authors' names. The style for the names is initials then
-surname, with a comma after all but the last 
-two names, which are separated by `and'. Initials should {\it not} have 
-full stops. First names may be used if desired. The command \verb"\maketitle" is not
-required.
+\section{Metodología} 
+MLOps es la metodología seleccionada para ser utilizada en este proyecto. Esto se debe a que permite de manera ágil tener un proceso eficiente y alto rendimiento ya que la solución plantada se basa en el desarrollo de una arquitectura construida con machine learning, sin embargo el mayor peso para utilizar esta metodología se basa en que AWS como plataforma brinda una herramienta para la gestión de proyectos de ML haciendo uso de esta metodología, denominado Orquestador de Cargas de Trabajo de MLOps, esto facilita en mayor medida el poder trabajar directamente con una herramienta bien definida dentro del mismo marco de trabajo sobre el cual se implanta la solución facilitando en gran medida el desarrollo de la misma
 
-The addresses of the authors' affiliations follow the list of authors. 
-Each address should be set by using
-\verb"\address{#1}" with the address as the single parameter in braces. 
-If there is more 
-than one address then a superscripted number, followed by a space, should come at the start of
-each address. In this case each author should also have a superscripted number or numbers following their name to indicate which address is the appropriate one for them.
- 
-Please also provide e-mail addresses for any or all of the authors using an \verb"\ead{#1}" command after the last address. \verb"\ead{#1}" provides the text Email: so \verb"#1" is just the e-mail address or a list of emails.  
+\subsection{Definición de Roles}
+\begin{itemize}
+\item Data Scientis: necesario para la definición de los datos y características necesarias para extraer dentro de cada perfil de aspirantes.;
+\item Data Analyst: necesario para evaluar las características necesarias para el modelo;
+\item ML engineer: necesario para la definición del modelo de ML; 
+\item Software Engineer ML: Necesario para el desarrollo y construcción del modelo de ML;
+\item ML Researcher: necesario para la evaluación del modelo de ML y desarrollo de mejoras futuras;
+\item Software Engineer: necesario para el desarrollo de las estructuras de datos, sistemas de recolección de la información y portal de visualización de resultados;
+\item o	AWS Architect Engineer: necesario para la construcción de la arquitectura dentro de AWS.
+\end{itemize}
 
-The abstract follows the addresses and
-should give readers concise information about the content 
-of the article and should not normally exceed 200 
-words. {\bf All articles must include an abstract}. To indicate the start 
-of the abstract type \verb"\begin{abstract}" followed by the text of the 
-abstract.  The abstract should normally be restricted 
-to a single paragraph and is terminated by the command
-\verb"\end{abstract}"
 
-\subsection{Sample coding for the start of an article}
-\label{startsample}
-The code for the start of a title page of a typical paper might read:
-\begin{verbatim}
-\title{The anomalous magnetic moment of the 
-neutrino and its relation to the solar neutrino problem}
+\subsection{Descripción de capas cloud}
+IaaS (Infraestructura como servicio)
+Debido a que la solucion se aloja en AWS toda la infraestructura será brindada por Amazon, solo nos preocuparemos por las configuraciones inciales de red y grupos de seguridad, por lo demás AWS se encargara de realizar las gestiones necesarias para brindar escalabilidad a según sea necesario.
 
-\author{P J Smith$^1$, T M Collins$^2$, 
-R J Jones$^{3,}$\footnote[4]{Present address:
-Department of Physics, University of Bristol, Tyndalls Park Road, 
-Bristol BS8 1TS, UK.} and Janet Williams$^3$}
+\subsection{Descripción de capas edge}
+AWS presenta  soluciones edge que son fácilmente implementadas, para nuestro caso de manera inicial nos alojaremos en las regiones de Amazon que nos entregan menos latencia a la zona en la cual desplegaremos inicialmente el servicio, como pasos a futuro optaremos por un servicio como AWS CloudFront  que  nos permitirá desplegar la solución con menores tiempos de respuesta a los clientes ya que este coloca todo lo implica el proyecto en una  zona geográfica más cercana a la solicitud entrante a través de la réplica del modelo en diferentes regiones
 
-\address{$^1$ Mathematics Faculty, Open University, 
-Milton Keynes MK7~6AA, UK}
-\address{$^2$ Department of Mathematics, 
-Imperial College, Prince Consort Road, London SW7~2BZ, UK}
-\address{$^3$ Department of Computer Science, 
-University College London, Gower Street, London WC1E~6BT, UK}
 
-\ead{williams@ucl.ac.uk}
+\section{Experimentación}
+Se describen en los siguientes dos pasos.
 
-\begin{abstract}
-The abstract appears here.
-\end{abstract}
-\end{verbatim}
+\subsection{Captura de Información y almacenamiento de Datos Brutos}
+La información se obtuvo de diferentes fuentes: correo electrónico, bases de datos de archivos ya existentes y formularios de registros con opción de carga de archivo digital. Los formatos aceptados son: .pdf, .doc, .docx.
+Una vez finalizada la obtención se cargan los documentos a un bucket de S3 en AWS.  
+Se procede a realizar el análisis gramatical de los archivos utilizando el servicio de AWS de Comprehend, previamente se entrenaron los algoritmos para crear el modelo de selección de características de cada CV y vacante, esto basado en la capacidad de Comprehend de realizar un análisis de Procesamiento de Lenguaje Natural.
+Los archivos analizados gramaticalmente se almacenaran en una base de datos no relacional como ser DynamoDB de AWS, esto si bien sacrificara la relacionalidad de los datos, se obtiene velocidad de procesamiento y estructura basado en cada característica de las entidades
 
-\section{The text}
-The text of the article should should be produced using standard \LaTeX\ formatting. Articles may be divided into sections and subsections, but the length limit provided by the \corg\ should be adhered to.
 
-\subsection{Acknowledgments}
-Authors wishing to acknowledge assistance or encouragement from 
-colleagues, special work by technical staff or financial support from 
-organizations should do so in an unnumbered Acknowledgments section 
-immediately following the last numbered section of the paper. The 
-command \verb"\ack" sets the acknowledgments heading as an unnumbered
-section.
+\subsection{Análisis y Procesamiento}
+El primer paso de esta etapa es el paso central de la solución se trata del proceso de análisis de datos. Con el uso de SageMaker se carga el modelo de machine learning a utilizar y con la ayuda de funciones lambda y python se procede a generar los script necesarios. A continuación se describe el funcionamiento en alto nivel de la solución en este paso:
+\begin{enumerate}
+\item Con la extracción de características de cada uno de las vacantes y los CV se procede a generar por medio de Text Analytics las palabras más relevantes de cada entidad;
+\item 	Una vez obtenida la información anterior se realiza el procesamiento de estos datos con un modelo de machine learning basado en un algoritmo no supervisado (K-mean), las características del modelo se basa en las palabras más relevantes y los datos de entrada serán las obtenidas en cada uno de los CV, al ejecutar el modelo los CV se agruparan según sus características.
+\item Se procede a realizar el proceso de inferencia con el modelo entrenado y se determina a que cluster pertenece. 
+\item Con esto en mente se procede a obtener los CV que pertenecen a ese cluster.
+\item Se procede ahora a colocar un peso a cada una de las palabras relevantes y se analizan nuevamente los CV obtenidos en la etapa anterior, con un algoritmo diferente, esto permitirá tener un ranking de los CV con mayor peso según las palabras.
+\end{enumerate}
 
-\subsection{Appendices}
-Technical detail that it is necessary to include, but that interrupts 
-the flow of the article, may be consigned to an appendix. 
-Any appendices should be included at the end of the main text of the paper, after the acknowledgments section (if any) but before the reference list.
-If there are two or more appendices they will be called Appendix A, Appendix B, etc. 
-Numbered equations will be in the form (A.1), (A.2), etc,
-figures will appear as figure A1, figure B1, etc and tables as table A1,
-table B1, etc.
+Como siguiente paso se realiza el proceso de estructuración de la data. Se ordenan los datos y se procede a crear las estructuras con el formato json y parquet para ser consumidos por el servicio de presentación. Finalmente se presentan los datos en un aplicativo web con el ranking de candidatos más afines a la vacante deseada.
 
-The command \verb"\appendix" is used to signify the start of the
-appendixes. Thereafter \verb"\section", \verb"\subsection", etc, will 
-give headings appropriate for an appendix. To obtain a simple heading of 
-`Appendix' use the code \verb"\section*{Appendix}". If it contains
-numbered equations, figures or tables the command \verb"\appendix" should
-precede it and \verb"\setcounter{section}{1}" must follow it. 
 
 \section{References}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
